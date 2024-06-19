@@ -95,7 +95,7 @@ e 4 5
 
 A saída seria:
 (1, 2, 3)
-Isso indica que o maior clique encontrado possui 3 vértices (1, 2 e 3).
+Isso indica que um dos maiores cliques encontrados (existem, nesse caso, mais de um com o mesmo tamanho) possui 3 vértices (1, 2 e 3).
 
 
 ## Observações 📝
