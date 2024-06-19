@@ -10,7 +10,7 @@ O programa foi testado nas seguintes plataformas:
 
 - **Linux:**
   - Distribuição: Ubuntu 20.04 LTS
-  - Compilação: Feita utilizando o utilitário `make` e o compilador `gcc`.
+  - Compilação: Feita utilizando o compilador `gcc`.
 
 - **Windows:**
   - Versão: Windows 11
@@ -21,29 +21,26 @@ O programa foi testado nas seguintes plataformas:
 Certifique-se de ter os seguintes requisitos atendidos para compilar e executar o programa:
 
 - **Linux:**
-  - GCC instalado (`sudo apt-get install gcc`)
-  - Utilitário Make (`sudo apt-get install make`)
+  - ``GCC`` instalado (`sudo apt install gcc`)
+  - Utilitário ``Make`` (`sudo apt install make`)
 
 - **Windows:**
-  - GCC via MinGW ou outro compilador C adequado configurado no PATH.
+  - ``GCC`` via MinGW ou outro compilador C adequado configurado no PATH.
+  - Atenção: Lembre-se de ter configurado o utilitário ``make`` corretamente. Por padrão o mingw instala como ``mingw32-make``
 
 ## Compilação e Execução 🚀
 
-Para compilar o programa, siga os passos apropriados para a sua plataforma:
-
-### Linux
-
-No terminal, vá até o diretório onde estão localizados os arquivos (`main.c`, `conexoes.txt`) e execute:
+Para compilar o programa, vá até o diretório onde estão localizados os arquivos (`main.c`, `example.txt`) e execute:
 
 ```bash
-make main
+make
 ```
-Isso irá compilar o programa usando o make com o arquivo de entrada main.c
+Isso irá compilar o programa usando o make com o arquivo de entrada main.c.
 
-### Windows
-No prompt de comando, vá até o diretório e compile usando gcc:
+Para executar:
 ```bash
-gcc -o main.exe main.c
+cd out
+./main
 ```
 
 ## Como Funciona ℹ️
