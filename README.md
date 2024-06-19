@@ -2,6 +2,50 @@
 
 Este programa em C encontra o maior conjunto de vértices ou a maior comunidade conectada em uma rede social (clique máximo) em um grafo não-direcionado lido de um arquivo. O problema é resolvido utilizando o algoritmo de força bruta, que verifica todas as possíveis combinações de vértices para determinar se formam um clique.
 
+## Plataforma de Teste e Compilação 🖥️
+
+### Plataformas Testadas ✅
+
+O programa foi testado nas seguintes plataformas:
+
+- **Linux:**
+  - Distribuição: Ubuntu 20.04 LTS
+  - Compilação: Feita utilizando o utilitário `make` e o compilador `gcc`.
+
+- **Windows:**
+  - Versão: Windows 11
+  - Compilação: Utilizou-se o compilador `gcc` via MinGW.
+
+### Requisitos de Compilação 🛠️
+
+Certifique-se de ter os seguintes requisitos atendidos para compilar e executar o programa:
+
+- **Linux:**
+  - GCC instalado (`sudo apt-get install gcc`)
+  - Utilitário Make (`sudo apt-get install make`)
+
+- **Windows:**
+  - GCC via MinGW ou outro compilador C adequado configurado no PATH.
+
+## Compilação e Execução 🚀
+
+Para compilar o programa, siga os passos apropriados para a sua plataforma:
+
+### Linux
+
+No terminal, vá até o diretório onde estão localizados os arquivos (`main.c`, `conexoes.txt`) e execute:
+
+```bash
+make main
+```
+Isso irá compilar o programa usando o make com o arquivo de entrada main.c
+
+### Windows
+No prompt de comando, vá até o diretório e compile usando gcc:
+```bash
+gcc -o main.exe main.c
+```
+
 ## Como Funciona ℹ️
 
 ### Algoritmo Utilizado 🛠️
@@ -21,14 +65,14 @@ O algoritmo de força bruta verifica todas as possíveis combinações de vérti
 - `conexoes.txt`: Arquivo de entrada que descreve as conexões entre os vértices do grafo. O formato é: **`e v1 v2`**<br />
 Onde `e` indica uma conexão entre os vértices `v1` e `v2`, `v3` e `v4`, e assim por diante.
 
-- `max_clique`: Executável para sistemas Linux.
-- `max_clique.exe`: Executável para sistemas Windows.
+- `main`: Executável para sistemas Linux.
+- `main.exe`: Executável para sistemas Windows.
 
 ## Como Usar 🚀
 
 1. **Execução:**
- - **Linux:** Execute o comando `./max_clique` no terminal.
- - **Windows:** Execute `max_clique.exe` no prompt de comando.
+ - **Linux:** Execute o comando `./main` no terminal.
+ - **Windows:** Execute `main.exe` no prompt de comando.
 
 2. Certifique-se de ter os arquivos necessários (`conexoes.txt` e os executáveis) no mesmo diretório antes de executar o programa.
 
@@ -38,15 +82,16 @@ Onde `e` indica uma conexão entre os vértices `v1` e `v2`, `v3` e `v4`, e assi
 <br />Onde o grafo possui 5 vértices e 6 arestas<br />
 <br />representado por:
 
-5 6<br />
-e 1 2<br />
-e 1 3<br />
-e 2 4<br />
-e 2 3<br />
-e 3 4<br />
-e 4 5<br />
-
-- Saída 💡
+```
+5 6
+e 1 2
+e 1 3
+e 2 4
+e 2 3
+e 3 4
+e 4 5
+```
+### Saída 💡
 
 A saída seria:
 (1, 2, 3)
