@@ -15,7 +15,7 @@ void inicializaGrafo(Grafo *g, int n);
 void lerConexoes(const char *filename, Grafo *g);
 void criaConexao(Grafo *g, int u, int v);
 void encontraCliqueMaximo(Grafo *g, int clique[], int *maxCliqueSize);
-void resultado(int maxCliqueSize, int *clique);
+void resultado(int maxCliqueSize, int clique[], int i);
 
 int main(void)
 {
@@ -31,9 +31,9 @@ int main(void)
     int maxCliqueSize;
 
     encontraCliqueMaximo(&g, clique, &maxCliqueSize);
-
-    resultado(maxCliqueSize, clique);
-
+  
+    resultado(maxCliqueSize, clique, 0);
+  
     return 0;
 }
 
@@ -137,16 +137,18 @@ void encontraCliqueMaximo(Grafo *g, int clique[], int *maxCliqueSize)
     *maxCliqueSize = maxClique;
 }
 
-void resultado(int maxCliqueSize, int *clique)
-{
-    printf("Maior comunidade conectada tem %d membros e é: (", maxCliqueSize);
-    for (int i = 0; i < maxCliqueSize; i++)
-    {
+void resultado(int maxCliqueSize, int clique[], int i) {
+    if (i == 0) {
+        printf("Maior comunidade conectada tem %d membros e é: (", maxCliqueSize);
+    }
+    if (i < maxCliqueSize) {
         printf("%d", clique[i] + 1);
-        if (i < maxCliqueSize - 1)
-        {
+        if (i < maxCliqueSize - 1) {
             printf(", ");
         }
+      
+        resultado(maxCliqueSize, clique, i + 1);
+    } else if (i == maxCliqueSize) {
+        printf(")\n");
     }
-    printf(")\n");
 }
